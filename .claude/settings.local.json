@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:avianexperiences.com)",
+      "WebSearch",
+      "WebFetch(domain:unsplash.com)",
+      "Bash(cmd.exe *)"
+    ]
+  }
+}
