@@ -2,10 +2,11 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
-// Rotating split hero: the main (right) image crossfades through a set of
-// Vietnam shots every 1.5s while a secondary image fills the left band.
-// Minimal bottom-left headline that strikes through one word.
+// Full-bleed hero: a large travel image crossfades behind a soft dark overlay,
+// with short, emotional white headline copy and a single clear CTA.
 const slides = [
   "/images/vietnam-02.jpg",
   "/images/vietnam-05.jpg",
@@ -27,49 +28,43 @@ export default function Hero() {
 
   return (
     <section className="relative w-full overflow-hidden">
-      <div className="relative min-h-[380px] aspect-[5/2] max-h-[620px] sm:min-h-[460px]">
-        {/* Secondary image — fills the full width behind */}
-        <Image
-          src="/images/vietnam-21.jpg"
-          alt="Emerald waters and green islands of Halong Bay from above"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
+      <div className="relative min-h-[460px] sm:min-h-[560px] lg:min-h-[640px]">
+        {/* Crossfading images */}
+        {slides.map((src, i) => (
+          <Image
+            key={src}
+            src={src}
+            alt="Beautiful landscapes and seascapes of Vietnam"
+            fill
+            priority={i === 0}
+            sizes="100vw"
+            className={`object-cover transition-opacity duration-700 ease-in-out ${
+              i === active ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        ))}
 
-        {/* Main image — full-bleed on mobile, split from ~24% on larger screens.
-            Slides are stacked and crossfaded by toggling opacity. */}
-        <div className="absolute inset-y-0 right-0 left-0 sm:left-[24%]">
-          {slides.map((src, i) => (
-            <Image
-              key={src}
-              src={src}
-              alt="Scenic landscapes and seascapes of Vietnam"
-              fill
-              priority={i === 0}
-              sizes="80vw"
-              className={`object-cover transition-opacity duration-700 ease-in-out ${
-                i === active ? "opacity-100" : "opacity-0"
-              }`}
-            />
-          ))}
-        </div>
+        {/* Soft dark overlay for legibility */}
+        <div className="absolute inset-0 bg-ink/35" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/65 via-ink/15 to-ink/25" />
 
-        {/* Legibility wash for the lower-left headline */}
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/55 via-ink/10 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-ink/50 to-transparent" />
-
-        {/* Headline — bottom-left */}
-        <div className="absolute bottom-8 left-5 sm:bottom-12 sm:left-10 lg:bottom-16 lg:left-14">
-          <h1 className="text-3xl font-extrabold leading-[1.08] tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)] sm:text-5xl lg:text-6xl">
-            Experiences for
-            <br />
-            <span className="line-through decoration-white decoration-[3px] sm:decoration-4">
-              Tourist
-            </span>{" "}
-            Colleagues
+        {/* Headline */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-white/85 sm:text-sm">
+            Halu Vietnam Tours
+          </p>
+          <h1 className="max-w-3xl text-4xl font-extrabold leading-[1.08] tracking-tight text-white drop-shadow-[0_2px_16px_rgba(0,0,0,0.45)] sm:text-6xl lg:text-7xl text-balance">
+            Explore Vietnam with Local Experts
           </h1>
+          <p className="mt-4 max-w-xl text-base font-medium text-white/90 sm:text-lg">
+            Curated trips. Real experiences.
+          </p>
+          <Link
+            href="/packages"
+            className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-base font-semibold text-ink shadow-card transition-all duration-300 hover:-translate-y-0.5 hover:bg-jade-600 hover:text-white"
+          >
+            Explore Packages <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>

@@ -62,12 +62,15 @@ module.exports = {
         serif: ["var(--font-display)", "Fraunces", "Georgia", "serif"],
       },
       boxShadow: {
-        soft: "0 10px 40px -12px rgba(12, 26, 22, 0.18)",
-        card: "0 18px 50px -20px rgba(12, 26, 22, 0.28)",
-        glow: "0 0 0 1px rgba(255,255,255,0.4), 0 20px 50px -18px rgba(12,26,22,0.45)",
+        // Soft, natural, cool-grey shadows (premium app feel — never harsh).
+        soft: "0 6px 24px -10px rgba(16, 24, 40, 0.10)",
+        card: "0 14px 40px -16px rgba(16, 24, 40, 0.16)",
+        pill: "0 4px 16px -6px rgba(16, 24, 40, 0.12)",
+        glow: "0 0 0 1px rgba(255,255,255,0.4), 0 18px 44px -16px rgba(16,24,40,0.30)",
       },
       borderRadius: {
         "4xl": "2rem",
+        "5xl": "2.5rem",
       },
       transitionTimingFunction: {
         smooth: "cubic-bezier(0.22, 1, 0.36, 1)",

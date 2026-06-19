@@ -1,78 +1,20 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import {
-  Menu, X, Phone, MessageCircle, ChevronLeft, ChevronRight, CircleUserRound,
-  Building2, Ship, Mountain, Waves, Landmark, Sparkles, UtensilsCrossed, TreePalm,
-} from "lucide-react";
+import { Menu, X, Phone, MessageCircle, CircleUserRound } from "lucide-react";
 import { nav, site, whatsappLink } from "@/data/site";
 import Button from "./Button";
 import Logo from "./Logo";
 
-// Minimal centred top-bar links, matching the Avian reference (3 links).
-const topNav = [
+// Pill-style primary tabs — our real categories (premium travel-app feel).
+const tabs = [
   { label: "Tour Packages", href: "/packages" },
   { label: "Daily Tours", href: "/daily-tours" },
   { label: "Cruises", href: "/cruises" },
 ];
-
-// Avian-style quick destination strip shown under the main header.
-const quickNav = [
-  { label: "Hanoi", icon: Landmark, href: "/destinations/hanoi" },
-  { label: "Halong Bay", icon: Ship, href: "/destinations/halong-bay" },
-  { label: "Da Nang", icon: Waves, href: "/destinations/da-nang" },
-  { label: "Hoi An", icon: Sparkles, href: "/destinations/hoi-an" },
-  { label: "Ho Chi Minh", icon: Building2, href: "/destinations/ho-chi-minh-city" },
-  { label: "Golden Bridge", icon: Mountain, href: "/destinations/golden-bridge" },
-  { label: "Cruises", icon: Ship, href: "/cruises" },
-  { label: "Beaches", icon: TreePalm, href: "/destinations/da-nang" },
-  { label: "Food Walks", icon: UtensilsCrossed, href: "/daily-tours" },
-];
-
-function QuickStrip() {
-  const ref = useRef(null);
-  const scrollBy = (dir) => {
-    const el = ref.current;
-    if (el) el.scrollBy({ left: dir * 260, behavior: "smooth" });
-  };
-  return (
-    <div className="relative border-t border-ink/5 bg-white">
-      <div className="container-px relative">
-        <button
-          type="button"
-          aria-label="Scroll left"
-          onClick={() => scrollBy(-1)}
-          className="absolute left-1 top-1/2 z-10 hidden -translate-y-1/2 rounded-full bg-white p-1 text-ink/50 shadow-soft ring-1 ring-ink/10 hover:text-jade-700 lg:flex"
-        >
-          <ChevronLeft className="h-4 w-4" />
-        </button>
-        <div ref={ref} className="no-scrollbar flex items-center gap-7 overflow-x-auto py-3 sm:gap-9 sm:py-3.5 lg:gap-7 lg:px-8">
-          {quickNav.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              className="group flex shrink-0 flex-col items-center gap-1.5 text-ink/60 transition-colors hover:text-jade-700"
-            >
-              <item.icon className="h-6 w-6 stroke-[1.5] transition-transform group-hover:-translate-y-0.5" />
-              <span className="text-[11px] font-medium whitespace-nowrap">{item.label}</span>
-            </Link>
-          ))}
-        </div>
-        <button
-          type="button"
-          aria-label="Scroll right"
-          onClick={() => scrollBy(1)}
-          className="absolute right-1 top-1/2 z-10 hidden -translate-y-1/2 rounded-full bg-white p-1 text-ink/50 shadow-soft ring-1 ring-ink/10 hover:text-jade-700 lg:flex"
-        >
-          <ChevronRight className="h-4 w-4" />
-        </button>
-      </div>
-    </div>
-  );
-}
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -100,9 +42,10 @@ export default function Navbar() {
   return (
     <header
       className={`sticky top-0 z-50 bg-white transition-shadow duration-300 ${
-        scrolled ? "shadow-[0_6px_24px_-12px_rgba(0,0,0,0.18)]" : "border-b border-ink/5"
+        scrolled ? "shadow-[0_6px_24px_-14px_rgba(16,24,40,0.18)]" : "border-b border-ink/5"
       }`}
     >
+      {/* Row 1 — minimal bar: logo left, profile + menu right */}
       <nav
         className={`container-px flex items-center justify-between gap-4 transition-all duration-300 ${
           scrolled
@@ -119,54 +62,52 @@ export default function Navbar() {
           }`}
         />
 
-        {/* Desktop nav (centered) — minimal, matching the reference */}
-        <ul className="hidden flex-1 items-center justify-center gap-10 lg:flex">
-          {topNav.map((item) => {
-            const active = pathname === item.href;
-            return (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className={`text-[15px] font-medium transition-colors duration-200 ${
-                    active ? "text-ink" : "text-ink/70 hover:text-ink"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-
-        <div className="flex items-center gap-1">
-          {/* Account icon (desktop) */}
+        <div className="flex items-center gap-1.5">
           <Link
             href="/contact"
             aria-label="Account"
-            className="hidden h-11 w-11 items-center justify-center rounded-full text-ink/55 transition-colors hover:bg-ink/5 hover:text-ink lg:inline-flex"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full text-ink/60 transition-colors hover:bg-ink/5 hover:text-ink"
           >
-            <CircleUserRound className="h-7 w-7 stroke-[1.5]" />
+            <CircleUserRound className="h-[26px] w-[26px] stroke-[1.5]" />
           </Link>
-          {/* Hamburger (mobile) */}
           <button
             type="button"
             aria-label="Open menu"
             aria-expanded={open}
             onClick={() => setOpen(true)}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full text-ink hover:bg-ink/5 lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full text-ink transition-colors hover:bg-ink/5"
           >
             <Menu className="h-6 w-6" />
           </button>
         </div>
       </nav>
 
-      {/* Destination quick strip — only at the top; tucks away on scroll */}
+      {/* Row 2 — pill nav tabs; tucks away on scroll */}
       <div
         className={`overflow-hidden transition-all duration-300 ${
           scrolled ? "max-h-0 opacity-0" : "max-h-24 opacity-100"
         }`}
       >
-        <QuickStrip />
+        <div className="container-px pb-3 pt-0.5">
+          <div className="mx-auto flex w-fit max-w-full items-center gap-1 overflow-x-auto rounded-full bg-white p-1.5 shadow-pill ring-1 ring-ink/[0.06]">
+            {tabs.map((item) => {
+              const active = pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`whitespace-nowrap rounded-full px-4 py-2 text-sm font-semibold transition-colors sm:px-5 ${
+                    active
+                      ? "bg-jade-600 text-white"
+                      : "text-ink/70 hover:bg-jade-50 hover:text-jade-700"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+          </div>
+        </div>
       </div>
 
       {/* Mobile slide-in drawer */}
@@ -174,14 +115,14 @@ export default function Navbar() {
         {open && (
           <>
             <motion.div
-              className="fixed inset-0 z-40 bg-ink/50 backdrop-blur-sm lg:hidden"
+              className="fixed inset-0 z-40 bg-ink/50 backdrop-blur-sm"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setOpen(false)}
             />
             <motion.aside
-              className="fixed inset-y-0 right-0 z-50 flex w-[86%] max-w-sm flex-col bg-white shadow-2xl lg:hidden"
+              className="fixed inset-y-0 right-0 z-50 flex w-[86%] max-w-sm flex-col bg-white shadow-2xl"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
@@ -224,7 +165,7 @@ export default function Navbar() {
                 </ul>
 
                 <div className="mt-auto flex flex-col gap-3 pt-8">
-                  <Button href="/contact" variant="gold" size="lg" className="w-full">
+                  <Button href="/contact" variant="primary" size="lg" className="w-full">
                     Get Free Quote
                   </Button>
                   <div className="grid grid-cols-2 gap-3">

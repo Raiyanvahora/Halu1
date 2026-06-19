@@ -71,15 +71,15 @@ export default function Footer() {
               <h3 className="text-base font-bold text-white">Get in touch</h3>
               <div className="mt-5 space-y-4 text-sm">
                 <div className="flex gap-3">
-                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold-300" />
+                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-jade-300" />
                   <span><span className="font-semibold text-white">India Office</span><br />{site.officeIndia}</span>
                 </div>
                 <div className="flex gap-3">
-                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold-300" />
+                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-jade-300" />
                   <span><span className="font-semibold text-white">Vietnam Office</span><br />{site.officeVietnam}</span>
                 </div>
                 <div className="flex gap-3">
-                  <Phone className="mt-0.5 h-4 w-4 shrink-0 text-gold-300" />
+                  <Phone className="mt-0.5 h-4 w-4 shrink-0 text-jade-300" />
                   <span>
                     <a href={`tel:${site.phoneIndiaHref}`} className="block hover:text-white">India: {site.phoneIndia}</a>
                     <a href={`tel:${site.phoneVietnamHref}`} className="block hover:text-white">Vietnam: {site.phoneVietnam}</a>
@@ -116,7 +116,7 @@ export default function Footer() {
           <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-7 text-sm text-white/55 sm:flex-row">
             <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
             <p className="inline-flex items-center gap-1.5">
-              Made with <Heart className="h-4 w-4 fill-gold-400 text-gold-400" /> in India
+              Made with <Heart className="h-4 w-4 fill-jade-400 text-jade-400" /> in India
             </p>
           </div>
         </div>

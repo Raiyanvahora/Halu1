@@ -10,11 +10,11 @@ export default function PackageCard({ pkg, className = "" }) {
   return (
     <Link
       href="/contact"
-      className={`group flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-soft ring-1 ring-ink/[0.06] transition-all duration-500 ease-smooth hover:-translate-y-1.5 hover:shadow-card ${className}`}
+      className={`group flex h-full flex-col overflow-hidden rounded-3xl bg-white shadow-soft ring-1 ring-ink/[0.06] transition-all duration-500 ease-smooth hover:-translate-y-1.5 hover:shadow-card ${className}`}
     >
       {/* Image with inset rounded corners */}
       <div className="p-2.5 pb-0">
-        <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
           <Image
             src={pkg.image}
             alt={pkg.title}
