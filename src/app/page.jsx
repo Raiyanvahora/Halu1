@@ -70,7 +70,7 @@ export default function HomePage() {
       </div>
 
       {/* Trending packages */}
-      <section className="container-px py-20 lg:py-24">
+      <section className="container-px py-12 sm:py-16 lg:py-24">
         <SectionHeading
           eyebrow="Trending now"
           title="Most-loved Vietnam tour packages"
@@ -81,7 +81,7 @@ export default function HomePage() {
             </Button>
           }
         />
-        <div className="mt-10">
+        <div className="mt-7 sm:mt-10">
           <Carousel itemClass="w-[290px] sm:w-[340px]">
             {packages.map((pkg) => (
               <PackageCard key={pkg.slug} pkg={pkg} />
@@ -91,7 +91,7 @@ export default function HomePage() {
       </section>
 
       {/* Why us */}
-      <section className="bg-sand py-20 lg:py-24">
+      <section className="bg-sand py-12 sm:py-16 lg:py-24">
         <div className="container-px">
           <SectionHeading
             align="center"
@@ -100,7 +100,7 @@ export default function HomePage() {
             description="We are Vietnam travel specialists helping Indian travelers discover Vietnam with comfort, confidence and genuine local expertise."
             className="mx-auto"
           />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 sm:mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {whyUs.map((item, i) => (
               <Reveal key={item.title} delay={i * 0.08}>
                 <div className="group h-full rounded-3xl bg-white p-7 shadow-soft ring-1 ring-ink/5 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-card">
@@ -117,7 +117,7 @@ export default function HomePage() {
       </section>
 
       {/* Top destinations — North & Central Vietnam */}
-      <section className="container-px pt-20 lg:pt-24">
+      <section className="container-px pt-12 sm:pt-16 lg:pt-24">
         <SectionHeading
           eyebrow="Where to go"
           title="Top Vietnam destinations"
@@ -128,7 +128,7 @@ export default function HomePage() {
             </Button>
           }
         />
-        <div className="mt-10">
+        <div className="mt-7 sm:mt-10">
           <Carousel itemClass="w-[200px] sm:w-[240px]">
             {featuredDestinations.map((d) => (
               <DestinationCard key={d.slug} destination={d} />
@@ -138,7 +138,7 @@ export default function HomePage() {
       </section>
 
       {/* Wide cinematic banner strip */}
-      <section className="container-px py-12 lg:py-16">
+      <section className="container-px py-8 sm:py-12 lg:py-16">
         <div className="relative aspect-[21/9] overflow-hidden rounded-[1.75rem] shadow-card sm:aspect-[24/7]">
           <Image
             src="/images/vietnam-21.jpg"
@@ -152,7 +152,7 @@ export default function HomePage() {
       </section>
 
       {/* More destinations — South & Coastal Vietnam */}
-      <section className="container-px pb-20 lg:pb-24">
+      <section className="container-px pb-12 sm:pb-16 lg:pb-24">
         <SectionHeading
           eyebrow="Beaches & beyond"
           title="South & coastal Vietnam"
@@ -163,7 +163,7 @@ export default function HomePage() {
             </Button>
           }
         />
-        <div className="mt-10">
+        <div className="mt-7 sm:mt-10">
           <Carousel itemClass="w-[200px] sm:w-[240px]">
             {coastalDestinations.map((d) => (
               <DestinationCard key={d.slug} destination={d} />
@@ -212,7 +212,7 @@ export default function HomePage() {
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-jade-950/92 via-jade-900/80 to-jade-900/40" />
-          <div className="relative grid gap-8 p-8 sm:p-12 lg:grid-cols-2 lg:p-16">
+          <div className="relative grid gap-8 p-6 sm:p-12 lg:grid-cols-2 lg:p-16">
             <Reveal>
               <span className="eyebrow text-gold-300">
                 <span className="h-px w-6 bg-gold-300" /> Cruise experiences
@@ -252,7 +252,7 @@ export default function HomePage() {
       </section>
 
       {/* Traveler types */}
-      <section className="container-px py-20 lg:py-24">
+      <section className="container-px py-12 sm:py-16 lg:py-24">
         <SectionHeading
           align="center"
           eyebrow="For every traveler"
@@ -260,7 +260,7 @@ export default function HomePage() {
           description="Whoever you are travelling as, we tailor the pace, stays and experiences to match."
           className="mx-auto"
         />
-        <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+        <div className="mt-8 sm:mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {travelerTypes.map((t, i) => (
             <Reveal key={t.title} delay={i * 0.05}>
               <div className="group flex h-full flex-col rounded-3xl border border-ink/5 bg-white p-6 transition-all duration-500 hover:-translate-y-1 hover:border-jade-200 hover:bg-jade-50/40 hover:shadow-soft">
@@ -276,13 +276,13 @@ export default function HomePage() {
       </section>
 
       {/* Watch & Read */}
-      <section className="container-px py-20 lg:py-24">
+      <section className="container-px py-12 sm:py-16 lg:py-24">
         <SectionHeading
           eyebrow="Watch & read"
           title="Vietnam travel guides & stories"
           description="Tips, itineraries and inspiration to help you plan the perfect Vietnam holiday."
         />
-        <div className="mt-10">
+        <div className="mt-7 sm:mt-10">
           <Carousel itemClass="w-[260px] sm:w-[300px]">
             {guides.map((g) => (
               <article
@@ -321,7 +321,7 @@ export default function HomePage() {
       </section>
 
       {/* Reviews */}
-      <section className="bg-sand py-20 lg:py-24">
+      <section className="bg-sand py-12 sm:py-16 lg:py-24">
         <div className="container-px">
           <SectionHeading
             eyebrow="Traveler stories"
@@ -333,7 +333,7 @@ export default function HomePage() {
               </Button>
             }
           />
-          <div className="mt-10">
+          <div className="mt-7 sm:mt-10">
             <Carousel itemClass="w-[300px] sm:w-[380px]">
               {reviews.map((review, i) => (
                 <ReviewCard key={i} review={review} className="h-full" />

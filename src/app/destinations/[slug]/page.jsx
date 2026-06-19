@@ -49,7 +49,7 @@ export default function DestinationPage({ params }) {
       />
 
       {/* Overview */}
-      <section className="container-px py-16 lg:py-20">
+      <section className="container-px py-10 sm:py-14 lg:py-20">
         <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr] lg:items-start">
           <Reveal>
             <span className="eyebrow">
@@ -100,7 +100,7 @@ export default function DestinationPage({ params }) {
       </section>
 
       {/* Related packages */}
-      <section className="bg-sand py-16 lg:py-20">
+      <section className="bg-sand py-10 sm:py-14 lg:py-20">
         <div className="container-px">
           <SectionHeading
             eyebrow="Suggested itineraries"
@@ -115,7 +115,7 @@ export default function DestinationPage({ params }) {
       </section>
 
       {/* Explore more */}
-      <section className="container-px py-16 lg:py-20">
+      <section className="container-px py-10 sm:py-14 lg:py-20">
         <SectionHeading eyebrow="Keep exploring" title="More Vietnam destinations" />
         <div className="mt-10 grid gap-5 sm:grid-cols-3">
           {others.map((d) => (

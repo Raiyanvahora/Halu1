@@ -49,14 +49,14 @@ function QuickStrip() {
         >
           <ChevronLeft className="h-4 w-4" />
         </button>
-        <div ref={ref} className="no-scrollbar flex items-center gap-7 overflow-x-auto px-8 py-2.5">
+        <div ref={ref} className="no-scrollbar flex items-center gap-5 overflow-x-auto px-8 py-1.5 sm:gap-7 sm:py-2.5">
           {quickNav.map((item) => (
             <Link
               key={item.label}
               href={item.href}
               className="group flex shrink-0 flex-col items-center gap-1 text-ink/60 transition-colors hover:text-jade-700"
             >
-              <item.icon className="h-5 w-5 stroke-[1.5] transition-transform group-hover:-translate-y-0.5" />
+              <item.icon className="h-[18px] w-[18px] stroke-[1.5] transition-transform group-hover:-translate-y-0.5 sm:h-5 sm:w-5" />
               <span className="text-[11px] font-medium whitespace-nowrap">{item.label}</span>
             </Link>
           ))}
@@ -103,8 +103,8 @@ export default function Navbar() {
         scrolled ? "shadow-[0_6px_24px_-12px_rgba(0,0,0,0.18)]" : "border-b border-ink/5"
       }`}
     >
-      <nav className="container-px flex h-[68px] items-center justify-between gap-4 sm:h-20 lg:h-[92px]">
-        <Logo dark className="h-12 w-12 sm:h-16 sm:w-16 lg:h-[76px] lg:w-[76px]" />
+      <nav className="container-px flex h-[60px] items-center justify-between gap-4 sm:h-20 lg:h-[92px]">
+        <Logo dark className="h-11 w-11 sm:h-16 sm:w-16 lg:h-[76px] lg:w-[76px]" />
 
         {/* Desktop nav (centered) — minimal, matching the reference */}
         <ul className="hidden flex-1 items-center justify-center gap-10 lg:flex">

@@ -20,7 +20,7 @@ export default function NewsletterForm() {
         e.preventDefault();
         setDone(true);
       }}
-      className="mt-4 flex gap-2"
+      className="mt-4 flex flex-col gap-2 sm:flex-row"
     >
       <input
         type="email"

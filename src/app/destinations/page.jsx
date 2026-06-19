@@ -20,8 +20,8 @@ export default function DestinationsPage() {
         image="/images/vietnam-06.jpg"
         crumbs={[{ label: "Destinations" }]}
       />
-      <section className="container-px py-16 lg:py-20">
-        <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
+      <section className="container-px py-10 sm:py-14 lg:py-20">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-5 lg:grid-cols-4">
           {destinations.map((d, i) => (
             <Reveal key={d.slug} delay={(i % 4) * 0.08}>
               <DestinationCard destination={d} />

@@ -14,21 +14,21 @@ const destinationLinks = [
 
 export default function Footer() {
   return (
-    <footer className="mt-24">
+    <footer className="mt-16 sm:mt-24">
       {/* Contact strip — white card overlapping the charcoal footer */}
       <div className="container-px relative z-10 translate-y-1/2">
-        <div className="flex flex-col items-center justify-between gap-6 rounded-3xl bg-white px-6 py-7 shadow-card ring-1 ring-ink/5 sm:flex-row sm:px-10">
+        <div className="flex flex-col items-center gap-5 rounded-3xl bg-white px-6 py-7 text-center shadow-card ring-1 ring-ink/5 sm:flex-row sm:justify-between sm:gap-6 sm:px-10 sm:text-left">
           <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4">
-            <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white">
+            <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white">
               <MessageCircle className="h-6 w-6" />
             </span>
             <span>
               <span className="block text-sm text-ink/55">Don&apos;t wait any longer — contact us!</span>
-              <span className="block text-2xl font-extrabold text-ink">{site.phoneIndia}</span>
+              <span className="block text-xl font-extrabold text-ink sm:text-2xl">{site.phoneIndia}</span>
             </span>
           </a>
-          <div className="flex items-center gap-4">
-            <span className="hidden text-sm font-semibold text-ink/70 sm:block">Be part of our journey</span>
+          <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
+            <span className="text-sm font-semibold text-ink/70">Be part of our journey</span>
             <div className="flex gap-2.5">
               {[
                 { Icon: Instagram, href: site.social.instagram, label: "Instagram" },
@@ -50,13 +50,26 @@ export default function Footer() {
       </div>
 
       {/* Charcoal footer */}
-      <div className="bg-charcoal pt-28 text-white/70">
+      <div className="bg-charcoal pt-24 text-white/70 sm:pt-28">
         <div className="container-px pb-10">
-          <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr_1fr_1.3fr]">
-            {/* Brand + offices */}
+          <div className="grid grid-cols-2 gap-x-6 gap-y-9 lg:grid-cols-[1.4fr_1.3fr_1fr_1fr] lg:gap-12">
+            {/* Brand + newsletter */}
             <div>
-              <Logo dark={false} className="h-36 w-36" />
-              <div className="mt-6 space-y-4 text-sm">
+              <Logo dark={false} className="h-24 w-24 sm:h-32 sm:w-32 lg:h-36 lg:w-36" />
+              <h3 className="mt-5 text-base font-bold text-white">Get updates &amp; more!</h3>
+              <p className="mt-2 text-sm">
+                Subscribe for Vietnam travel tips, seasonal deals and new packages.
+              </p>
+              <NewsletterForm />
+              <a href={`mailto:${site.email}`} className="mt-4 block break-all text-sm hover:text-white">
+                {site.email}
+              </a>
+            </div>
+
+            {/* Get in touch — offices */}
+            <div>
+              <h3 className="text-base font-bold text-white">Get in touch</h3>
+              <div className="mt-5 space-y-4 text-sm">
                 <div className="flex gap-3">
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold-300" />
                   <span><span className="font-semibold text-white">India Office</span><br />{site.officeIndia}</span>
@@ -97,18 +110,6 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-            </div>
-
-            {/* Newsletter */}
-            <div>
-              <h3 className="text-base font-bold text-white">Get updates &amp; more!</h3>
-              <p className="mt-3 text-sm">
-                Subscribe for Vietnam travel tips, seasonal deals and new packages.
-              </p>
-              <NewsletterForm />
-              <a href={`mailto:${site.email}`} className="mt-4 block break-all text-sm hover:text-white">
-                {site.email}
-              </a>
             </div>
           </div>
 

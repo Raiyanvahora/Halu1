@@ -24,7 +24,7 @@ export default function CruisesPage() {
         crumbs={[{ label: "Cruises" }]}
       />
 
-      <section className="container-px py-16 lg:py-20">
+      <section className="container-px py-10 sm:py-14 lg:py-20">
         <SectionHeading
           eyebrow="Halong Bay & beyond"
           title="Choose your cruise"

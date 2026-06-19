@@ -58,7 +58,7 @@ export default function AboutPage() {
       />
 
       {/* Intro split */}
-      <section className="container-px py-16 lg:py-20">
+      <section className="container-px py-10 sm:py-14 lg:py-20">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <Reveal className="relative aspect-[4/3] overflow-hidden rounded-4xl shadow-card">
             <Image src="/images/vietnam-10.jpg" alt="Hoi An ancient town" fill sizes="(max-width:1024px) 90vw, 600px" className="object-cover" />
@@ -89,7 +89,7 @@ export default function AboutPage() {
       </section>
 
       {/* Story sections */}
-      <section className="bg-sand py-16 lg:py-20">
+      <section className="bg-sand py-10 sm:py-14 lg:py-20">
         <div className="container-px">
           <SectionHeading
             align="center"

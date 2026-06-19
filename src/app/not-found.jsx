@@ -5,7 +5,7 @@ export default function NotFound() {
   return (
     <section className="flex min-h-[70vh] items-center justify-center px-5 py-28 text-center">
       <div className="max-w-lg">
-        <p className="font-display text-7xl font-semibold text-jade-700">404</p>
+        <p className="font-display text-6xl font-semibold text-jade-700 sm:text-7xl">404</p>
         <h1 className="mt-4 font-display text-3xl font-semibold text-ink">
           This page took a detour
         </h1>

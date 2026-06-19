@@ -20,7 +20,7 @@ export default function CTASection({
           <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl text-balance">
             {title}
           </h2>
-          <p className="mt-4 text-lg text-cream/75">{subtitle}</p>
+          <p className="mt-4 text-base text-cream/75 sm:text-lg">{subtitle}</p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Button href={`tel:${site.phoneIndiaHref}`} variant="gold" size="lg">
               <Phone className="h-5 w-5" /> Call Now

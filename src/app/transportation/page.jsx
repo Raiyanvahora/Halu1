@@ -37,7 +37,7 @@ export default function TransportationPage() {
         crumbs={[{ label: "Transportation" }]}
       />
 
-      <section className="container-px py-16 lg:py-20">
+      <section className="container-px py-10 sm:py-14 lg:py-20">
         <SectionHeading
           eyebrow="Our services"
           title="Seamless travel, every leg of the trip"

@@ -43,11 +43,11 @@ export default function PageHero({
               {eyebrow}
             </span>
           )}
-          <h1 className="mt-3 max-w-3xl font-display text-4xl font-semibold leading-tight text-white sm:text-5xl text-balance">
+          <h1 className="mt-3 max-w-3xl font-display text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl text-balance">
             {title}
           </h1>
           {subtitle && (
-            <p className="mt-4 max-w-2xl text-lg leading-relaxed text-cream/80">{subtitle}</p>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-cream/80 sm:text-lg">{subtitle}</p>
           )}
         </Reveal>
       </div>

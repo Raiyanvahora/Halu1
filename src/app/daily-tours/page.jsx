@@ -23,7 +23,7 @@ export default function DailyToursPage() {
         crumbs={[{ label: "Daily Tours" }]}
       />
 
-      <section className="container-px py-16 lg:py-20">
+      <section className="container-px py-10 sm:py-14 lg:py-20">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {dailyTours.map((tour, i) => (
             <Reveal key={tour.slug} delay={(i % 3) * 0.08}>

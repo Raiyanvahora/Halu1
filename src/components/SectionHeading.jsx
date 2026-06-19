@@ -12,7 +12,7 @@ export default function SectionHeading({
   const centered = align === "center";
   return (
     <div
-      className={`flex flex-col gap-5 ${
+      className={`flex flex-col gap-4 sm:gap-5 ${
         centered ? "items-center text-center" : "md:flex-row md:items-end md:justify-between"
       } ${className}`}
     >
@@ -23,11 +23,11 @@ export default function SectionHeading({
             {eyebrow}
           </span>
         )}
-        <h2 className="text-3xl leading-tight text-ink sm:text-4xl lg:text-[2.6rem] text-balance">
+        <h2 className="text-[1.7rem] leading-tight text-ink sm:text-4xl lg:text-[2.6rem] text-balance">
           {title}
         </h2>
         {description && (
-          <p className="mt-4 text-base leading-relaxed text-ink/65">{description}</p>
+          <p className="mt-3 text-[15px] leading-relaxed text-ink/65 sm:mt-4 sm:text-base">{description}</p>
         )}
       </Reveal>
       {action && <Reveal delay={0.1} className="shrink-0">{action}</Reveal>}

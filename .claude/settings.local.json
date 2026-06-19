@@ -4,7 +4,13 @@
       "WebFetch(domain:avianexperiences.com)",
       "WebSearch",
       "WebFetch(domain:unsplash.com)",
-      "Bash(cmd.exe *)"
+      "Bash(cmd.exe *)",
+      "PowerShell(gh auth *)",
+      "Bash(grep -oiE \"\\\\.\\(flex|grid|absolute|hover\\\\\\\\\\\\\\\\:|md\\\\\\\\\\\\\\\\:|lg\\\\\\\\\\\\\\\\:|translate|duration-|ease-|backdrop-blur|animate-\\)\" avian.css)",
+      "Bash(npx --no-install playwright --version)",
+      "Bash(node mobile-check.mjs)",
+      "Bash(node mobile-slices.mjs \"/\" home)",
+      "Bash(node mobile-slices.mjs)"
     ]
   }
 }

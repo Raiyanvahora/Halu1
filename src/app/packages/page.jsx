@@ -18,7 +18,7 @@ export default function PackagesPage() {
         image="/images/vietnam-07.jpg"
         crumbs={[{ label: "Packages" }]}
       />
-      <section className="container-px py-16 lg:py-20">
+      <section className="container-px py-10 sm:py-14 lg:py-20">
         <PackagesExplorer />
       </section>
       <section className="py-8 lg:py-12">
