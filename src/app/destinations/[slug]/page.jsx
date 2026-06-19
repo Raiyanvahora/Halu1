@@ -6,6 +6,7 @@ import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
 import SectionHeading from "@/components/SectionHeading";
 import PackageCard from "@/components/PackageCard";
+import DestinationCard from "@/components/DestinationCard";
 import Reveal from "@/components/Reveal";
 import { destinations } from "@/data/destinations";
 import { packages } from "@/data/packages";
@@ -117,22 +118,9 @@ export default function DestinationPage({ params }) {
       {/* Explore more */}
       <section className="container-px py-10 sm:py-14 lg:py-20">
         <SectionHeading eyebrow="Keep exploring" title="More Vietnam destinations" />
-        <div className="mt-10 grid gap-5 sm:grid-cols-3">
+        <div className="mt-10 grid grid-cols-2 gap-5 sm:grid-cols-3">
           {others.map((d) => (
-            <Link
-              key={d.slug}
-              href={`/destinations/${d.slug}`}
-              className="group relative block overflow-hidden rounded-3xl shadow-soft ring-1 ring-ink/5"
-            >
-              <div className="relative aspect-[4/3]">
-                <Image src={d.image} alt={d.name} fill sizes="(max-width:768px) 90vw, 360px" className="object-cover transition-transform duration-700 group-hover:scale-110" />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent" />
-              <div className="absolute bottom-0 p-5">
-                <p className="text-xs font-semibold uppercase tracking-widest text-gold-300">{d.tagline}</p>
-                <h3 className="font-display text-xl font-semibold text-white">{d.name}</h3>
-              </div>
-            </Link>
+            <DestinationCard key={d.slug} destination={d} />
           ))}
         </div>
       </section>

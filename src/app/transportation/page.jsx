@@ -71,7 +71,7 @@ export default function TransportationPage() {
             <ul className="grid gap-3 sm:grid-cols-2">
               {reasons.map((r) => (
                 <li key={r} className="flex items-center gap-3 rounded-2xl bg-white/10 px-4 py-3 text-sm text-cream/90 ring-1 ring-white/10">
-                  <Check className="h-5 w-5 shrink-0 text-gold-300" /> {r}
+                  <Check className="h-5 w-5 shrink-0 text-jade-300" /> {r}
                 </li>
               ))}
             </ul>
