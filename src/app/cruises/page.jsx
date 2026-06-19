@@ -23,10 +23,7 @@ export default function CruisesPage() {
       />
 
       <section className="container-px py-10 sm:py-14 lg:py-20">
-        <SectionHeading
-          eyebrow="Halong Bay & beyond"
-          title="Choose your cruise"
-        />
+        <SectionHeading title="Choose your cruise" />
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {cruises.map((cruise, i) => (
             <Reveal key={cruise.slug} delay={(i % 3) * 0.08}>

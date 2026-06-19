@@ -103,10 +103,7 @@ export default function DestinationPage({ params }) {
       {/* Related packages */}
       <section className="bg-sand py-10 sm:py-14 lg:py-20">
         <div className="container-px">
-          <SectionHeading
-            eyebrow="Suggested itineraries"
-            title={`Packages featuring ${destination.name}`}
-          />
+          <SectionHeading title={`Packages featuring ${destination.name}`} />
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {fallback.map((pkg) => (
               <PackageCard key={pkg.slug} pkg={pkg} />
@@ -117,7 +114,7 @@ export default function DestinationPage({ params }) {
 
       {/* Explore more */}
       <section className="container-px py-10 sm:py-14 lg:py-20">
-        <SectionHeading eyebrow="Keep exploring" title="More Vietnam destinations" />
+        <SectionHeading title="More destinations" />
         <div className="mt-10 grid grid-cols-2 gap-5 sm:grid-cols-3">
           {others.map((d) => (
             <DestinationCard key={d.slug} destination={d} />

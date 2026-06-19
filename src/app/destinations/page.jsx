@@ -21,7 +21,7 @@ export default function DestinationsPage() {
         crumbs={[{ label: "Destinations" }]}
       />
       <section className="container-px py-10 sm:py-14 lg:py-20">
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-5 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 lg:grid-cols-4">
           {destinations.map((d, i) => (
             <Reveal key={d.slug} delay={(i % 4) * 0.08}>
               <DestinationCard destination={d} />

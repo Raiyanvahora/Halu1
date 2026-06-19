@@ -25,16 +25,15 @@ export default function HomePage() {
       {/* Trending packages — white */}
       <section className="container-px pb-12 pt-2 sm:pb-16 lg:pb-20">
         <SectionHeading
-          eyebrow="Trending now"
-          title="Most-loved Vietnam tours"
+          title="Trending Vietnam tours"
           action={
             <Button href="/packages" variant="outline">
               View all <ArrowRight className="h-4 w-4" />
             </Button>
           }
         />
-        <div className="mt-7 sm:mt-10">
-          <Carousel itemClass="w-[320px] sm:w-[370px]">
+        <div className="mt-6 sm:mt-9">
+          <Carousel itemClass="w-[340px] sm:w-[380px]">
             {packages.map((pkg) => (
               <PackageCard key={pkg.slug} pkg={pkg} />
             ))}
@@ -46,16 +45,15 @@ export default function HomePage() {
       <section className="bg-sand py-12 sm:py-16 lg:py-24">
         <div className="container-px">
           <SectionHeading
-            eyebrow="Where to go"
-            title="Top Vietnam destinations"
+            title="Top destinations"
             action={
               <Button href="/destinations" variant="outline">
                 View all <ArrowRight className="h-4 w-4" />
               </Button>
             }
           />
-          <div className="mt-7 sm:mt-10">
-            <Carousel itemClass="w-[270px] sm:w-[300px]">
+          <div className="mt-6 sm:mt-9">
+            <Carousel itemClass="w-[280px] sm:w-[320px]">
               {featuredDestinations.map((d) => (
                 <DestinationCard key={d.slug} destination={d} />
               ))}
@@ -67,16 +65,15 @@ export default function HomePage() {
       {/* More destinations — white */}
       <section className="container-px py-12 sm:py-16 lg:py-24">
         <SectionHeading
-          eyebrow="Beaches & beyond"
-          title="South & coastal Vietnam"
+          title="Beaches & coastal escapes"
           action={
             <Button href="/destinations" variant="outline">
               View all <ArrowRight className="h-4 w-4" />
             </Button>
           }
         />
-        <div className="mt-7 sm:mt-10">
-          <Carousel itemClass="w-[270px] sm:w-[300px]">
+        <div className="mt-6 sm:mt-9">
+          <Carousel itemClass="w-[280px] sm:w-[320px]">
             {coastalDestinations.map((d) => (
               <DestinationCard key={d.slug} destination={d} />
             ))}
@@ -88,11 +85,10 @@ export default function HomePage() {
       <section className="bg-sand py-12 sm:py-16 lg:py-24">
         <div className="container-px">
           <SectionHeading
-            eyebrow="Watch & read"
-            title="Vietnam travel guides & stories"
+            title="Guides & stories"
           />
-          <div className="mt-7 sm:mt-10">
-            <Carousel itemClass="w-[300px] sm:w-[340px]">
+          <div className="mt-6 sm:mt-9">
+            <Carousel itemClass="w-[320px] sm:w-[360px]">
               {guides.map((g) => (
                 <article
                   key={g.title}
@@ -123,16 +119,15 @@ export default function HomePage() {
       {/* Reviews — white */}
       <section className="container-px py-12 sm:py-16 lg:py-24">
         <SectionHeading
-          eyebrow="Traveler stories"
-          title="Loved by travelers across India"
+          title="Loved by travelers"
           action={
             <Button href="/reviews" variant="outline">
               View all <ArrowRight className="h-4 w-4" />
             </Button>
           }
         />
-        <div className="mt-7 sm:mt-10">
-          <Carousel itemClass="w-[300px] sm:w-[380px]">
+        <div className="mt-6 sm:mt-9">
+          <Carousel itemClass="w-[320px] sm:w-[380px]">
             {reviews.map((review, i) => (
               <ReviewCard key={i} review={review} className="h-full" />
             ))}

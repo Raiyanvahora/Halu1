@@ -55,8 +55,8 @@ export default function Carousel({
         ))}
       </div>
 
-      {/* Controls */}
-      <div className="mt-6 flex items-center justify-end gap-2">
+      {/* Controls — desktop only; mobile users swipe */}
+      <div className="mt-6 hidden items-center justify-end gap-2 lg:flex">
         <button
           type="button"
           aria-label="Previous"
