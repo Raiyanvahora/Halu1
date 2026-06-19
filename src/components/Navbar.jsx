@@ -49,16 +49,16 @@ export default function Navbar() {
       <nav
         className={`container-px flex items-center justify-between gap-4 transition-all duration-300 ${
           scrolled
-            ? "h-[66px] sm:h-[68px] lg:h-[72px]"
-            : "h-[88px] sm:h-[96px] lg:h-[104px]"
+            ? "h-[76px] sm:h-[78px] lg:h-[80px]"
+            : "h-[112px] sm:h-[116px] lg:h-[120px]"
         }`}
       >
         <Logo
           dark
           className={`transition-all duration-300 ${
             scrolled
-              ? "h-14 w-14 sm:h-14 sm:w-14 lg:h-14 lg:w-14"
-              : "h-[72px] w-[72px] sm:h-[80px] sm:w-[80px] lg:h-[92px] lg:w-[92px]"
+              ? "h-16 w-16 sm:h-16 sm:w-16 lg:h-16 lg:w-16"
+              : "h-24 w-24 sm:h-[104px] sm:w-[104px] lg:h-28 lg:w-28"
           }`}
         />
 
