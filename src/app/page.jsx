@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowRight, BookOpen } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Hero from "@/components/Hero";
 import DestinationShortcuts from "@/components/DestinationShortcuts";
 import SectionHeading from "@/components/SectionHeading";
@@ -106,9 +106,6 @@ export default function HomePage() {
                       sizes="(max-width:768px) 92vw, 340px"
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
-                    <span className="absolute right-3 top-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-jade-700 shadow-soft backdrop-blur">
-                      <BookOpen className="h-4 w-4" />
-                    </span>
                   </div>
                   <div className="p-5">
                     <h3 className="text-lg font-bold leading-snug text-ink group-hover:text-jade-700">

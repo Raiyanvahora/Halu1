@@ -1,12 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Clock, Star, TicketPercent } from "lucide-react";
+import { Clock } from "lucide-react";
 
-// Tour package card in the Avian style: image, duration, title, subtitle,
-// green "Save" pill and a bold red price with the original struck through.
+// Clean, image-first tour package card: large image, duration, title and price.
 export default function PackageCard({ pkg, className = "" }) {
-  const savings = pkg.oldPrice ? pkg.oldPrice - pkg.price : 0;
-
   return (
     <Link
       href="/contact"
@@ -22,12 +19,6 @@ export default function PackageCard({ pkg, className = "" }) {
             sizes="(max-width: 768px) 92vw, 380px"
             className="object-cover transition-transform duration-700 ease-smooth group-hover:scale-110"
           />
-          {pkg.rating && (
-            <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/95 px-2.5 py-1 text-xs font-bold text-ink shadow-soft backdrop-blur">
-              <Star className="h-3.5 w-3.5 fill-gold-400 text-gold-400" />
-              {pkg.rating}
-            </span>
-          )}
         </div>
       </div>
 
@@ -40,18 +31,10 @@ export default function PackageCard({ pkg, className = "" }) {
           {pkg.title}
         </h3>
 
-        <div className="mt-auto flex items-center justify-between gap-3 pt-4">
-          <div className="flex items-baseline gap-2">
-            <span className="text-2xl font-extrabold text-price">${pkg.price}</span>
-            {pkg.oldPrice && (
-              <span className="text-sm text-ink/40 line-through">${pkg.oldPrice}</span>
-            )}
-          </div>
-          {savings > 0 && (
-            <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-save/10 px-3 py-1.5 text-xs font-bold text-save">
-              <TicketPercent className="h-3.5 w-3.5" />
-              Save ${savings}
-            </span>
+        <div className="mt-auto flex items-baseline gap-2 pt-4">
+          <span className="text-2xl font-extrabold text-price">${pkg.price}</span>
+          {pkg.oldPrice && (
+            <span className="text-sm text-ink/40 line-through">${pkg.oldPrice}</span>
           )}
         </div>
       </div>

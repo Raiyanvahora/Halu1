@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Plane } from "lucide-react";
 
 // Tall portrait destination tile with a large overlaid name + plane icon,
 // matching the Avian "International / Domestic destinations" card style.
@@ -18,11 +17,6 @@ export default function DestinationCard({ destination, className = "" }) {
         className="object-cover transition-transform duration-[900ms] ease-smooth group-hover:scale-110"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent" />
-
-      {/* Plane badge top-right */}
-      <span className="absolute right-3 top-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-md transition-colors group-hover:bg-white group-hover:text-jade-700">
-        <Plane className="h-4 w-4 -rotate-12" />
-      </span>
 
       <div className="absolute inset-x-0 bottom-0 p-5 text-center">
         <h3
