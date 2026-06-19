@@ -10,7 +10,9 @@
       "Bash(npx --no-install playwright --version)",
       "Bash(node mobile-check.mjs)",
       "Bash(node mobile-slices.mjs \"/\" home)",
-      "Bash(node mobile-slices.mjs)"
+      "Bash(node mobile-slices.mjs)",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" http://localhost:3000/)"
     ]
   }
 }

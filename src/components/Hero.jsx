@@ -1,9 +1,30 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
-// Avian-style split hero: a secondary image fills the left band while the main
-// image overlaps from ~22% to the right edge, with a minimal bottom-left
-// headline that strikes through one word. Full-bleed, no buttons or badges.
+// Rotating split hero: the main (right) image crossfades through a set of
+// Vietnam shots every 1.5s while a secondary image fills the left band.
+// Minimal bottom-left headline that strikes through one word.
+const slides = [
+  "/images/vietnam-02.jpg",
+  "/images/vietnam-05.jpg",
+  "/images/vietnam-09.jpg",
+  "/images/vietnam-13.jpg",
+  "/images/vietnam-18.jpg",
+  "/images/vietnam-23.jpg",
+];
+
 export default function Hero() {
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setActive((i) => (i + 1) % slides.length);
+    }, 1500);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section className="relative w-full overflow-hidden">
       <div className="relative min-h-[380px] aspect-[5/2] max-h-[620px] sm:min-h-[460px]">
@@ -17,16 +38,22 @@ export default function Hero() {
           className="object-cover"
         />
 
-        {/* Main image — full-bleed on mobile, split from ~24% on larger screens */}
+        {/* Main image — full-bleed on mobile, split from ~24% on larger screens.
+            Slides are stacked and crossfaded by toggling opacity. */}
         <div className="absolute inset-y-0 right-0 left-0 sm:left-[24%]">
-          <Image
-            src="/images/vietnam-02.jpg"
-            alt="Halong Bay's limestone karsts and turquoise waters in Vietnam"
-            fill
-            priority
-            sizes="80vw"
-            className="object-cover"
-          />
+          {slides.map((src, i) => (
+            <Image
+              key={src}
+              src={src}
+              alt="Scenic landscapes and seascapes of Vietnam"
+              fill
+              priority={i === 0}
+              sizes="80vw"
+              className={`object-cover transition-opacity duration-700 ease-in-out ${
+                i === active ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          ))}
         </div>
 
         {/* Legibility wash for the lower-left headline */}

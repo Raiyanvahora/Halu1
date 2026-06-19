@@ -45,18 +45,18 @@ function QuickStrip() {
           type="button"
           aria-label="Scroll left"
           onClick={() => scrollBy(-1)}
-          className="absolute left-1 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white p-1 text-ink/50 shadow-soft ring-1 ring-ink/10 hover:text-jade-700"
+          className="absolute left-1 top-1/2 z-10 hidden -translate-y-1/2 rounded-full bg-white p-1 text-ink/50 shadow-soft ring-1 ring-ink/10 hover:text-jade-700 lg:flex"
         >
           <ChevronLeft className="h-4 w-4" />
         </button>
-        <div ref={ref} className="no-scrollbar flex items-center gap-5 overflow-x-auto px-8 py-1.5 sm:gap-7 sm:py-2.5">
+        <div ref={ref} className="no-scrollbar flex items-center gap-7 overflow-x-auto py-3 sm:gap-9 sm:py-3.5 lg:gap-7 lg:px-8">
           {quickNav.map((item) => (
             <Link
               key={item.label}
               href={item.href}
-              className="group flex shrink-0 flex-col items-center gap-1 text-ink/60 transition-colors hover:text-jade-700"
+              className="group flex shrink-0 flex-col items-center gap-1.5 text-ink/60 transition-colors hover:text-jade-700"
             >
-              <item.icon className="h-[18px] w-[18px] stroke-[1.5] transition-transform group-hover:-translate-y-0.5 sm:h-5 sm:w-5" />
+              <item.icon className="h-6 w-6 stroke-[1.5] transition-transform group-hover:-translate-y-0.5" />
               <span className="text-[11px] font-medium whitespace-nowrap">{item.label}</span>
             </Link>
           ))}
@@ -65,7 +65,7 @@ function QuickStrip() {
           type="button"
           aria-label="Scroll right"
           onClick={() => scrollBy(1)}
-          className="absolute right-1 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white p-1 text-ink/50 shadow-soft ring-1 ring-ink/10 hover:text-jade-700"
+          className="absolute right-1 top-1/2 z-10 hidden -translate-y-1/2 rounded-full bg-white p-1 text-ink/50 shadow-soft ring-1 ring-ink/10 hover:text-jade-700 lg:flex"
         >
           <ChevronRight className="h-4 w-4" />
         </button>
@@ -80,7 +80,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    const onScroll = () => setScrolled(window.scrollY > 40);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -103,8 +103,21 @@ export default function Navbar() {
         scrolled ? "shadow-[0_6px_24px_-12px_rgba(0,0,0,0.18)]" : "border-b border-ink/5"
       }`}
     >
-      <nav className="container-px flex h-[60px] items-center justify-between gap-4 sm:h-20 lg:h-[92px]">
-        <Logo dark className="h-11 w-11 sm:h-16 sm:w-16 lg:h-[76px] lg:w-[76px]" />
+      <nav
+        className={`container-px flex items-center justify-between gap-4 transition-all duration-300 ${
+          scrolled
+            ? "h-[60px] sm:h-[64px] lg:h-[72px]"
+            : "h-[72px] sm:h-[88px] lg:h-[104px]"
+        }`}
+      >
+        <Logo
+          dark
+          className={`transition-all duration-300 ${
+            scrolled
+              ? "h-11 w-11 sm:h-12 sm:w-12 lg:h-14 lg:w-14"
+              : "h-14 w-14 sm:h-[72px] sm:w-[72px] lg:h-[92px] lg:w-[92px]"
+          }`}
+        />
 
         {/* Desktop nav (centered) — minimal, matching the reference */}
         <ul className="hidden flex-1 items-center justify-center gap-10 lg:flex">
@@ -147,8 +160,14 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Destination quick strip */}
-      <QuickStrip />
+      {/* Destination quick strip — only at the top; tucks away on scroll */}
+      <div
+        className={`overflow-hidden transition-all duration-300 ${
+          scrolled ? "max-h-0 opacity-0" : "max-h-24 opacity-100"
+        }`}
+      >
+        <QuickStrip />
+      </div>
 
       {/* Mobile slide-in drawer */}
       <AnimatePresence>
