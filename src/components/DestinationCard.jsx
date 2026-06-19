@@ -24,15 +24,12 @@ export default function DestinationCard({ destination, className = "" }) {
         <Plane className="h-4 w-4 -rotate-12" />
       </span>
 
-      <div className="absolute inset-x-0 bottom-0 p-4 text-center">
+      <div className="absolute inset-x-0 bottom-0 p-5 text-center">
         <h3
-          className="font-display text-2xl font-extrabold uppercase tracking-wide text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)] sm:text-[1.6rem]"
+          className="font-display text-2xl font-extrabold uppercase tracking-wide text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)] sm:text-[1.7rem]"
         >
           {destination.name}
         </h3>
-        <p className="mt-0.5 text-xs font-medium uppercase tracking-[0.18em] text-white/75">
-          {destination.tagline}
-        </p>
       </div>
     </Link>
   );
