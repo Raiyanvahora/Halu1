@@ -7,11 +7,10 @@ import Button from "@/components/Button";
 import Carousel from "@/components/Carousel";
 import PackageCard from "@/components/PackageCard";
 import DestinationCard from "@/components/DestinationCard";
-import ReviewCard from "@/components/ReviewCard";
+import TravelerPhotos from "@/components/TravelerPhotos";
 import CTASection from "@/components/CTASection";
 import { packages } from "@/data/packages";
 import { featuredDestinations, coastalDestinations } from "@/data/destinations";
-import { reviews } from "@/data/reviews";
 import { guides } from "@/data/guides";
 
 export default function HomePage() {
@@ -116,10 +115,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Reviews — white */}
+      {/* Happy travelers — photo gallery */}
       <section className="container-px py-12 sm:py-16 lg:py-24">
         <SectionHeading
-          title="Loved by travelers"
+          title="Happy travelers in Vietnam"
           action={
             <Button href="/reviews" variant="outline">
               View all <ArrowRight className="h-4 w-4" />
@@ -127,11 +126,7 @@ export default function HomePage() {
           }
         />
         <div className="mt-6 sm:mt-9">
-          <Carousel itemClass="w-[320px] sm:w-[380px]">
-            {reviews.map((review, i) => (
-              <ReviewCard key={i} review={review} className="h-full" />
-            ))}
-          </Carousel>
+          <TravelerPhotos />
         </div>
       </section>
 

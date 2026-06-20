@@ -1,9 +1,10 @@
+import Image from "next/image";
 import { Star } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
 import Reveal from "@/components/Reveal";
-import ReviewCard from "@/components/ReviewCard";
 import { reviews } from "@/data/reviews";
+import { travelerPhotos } from "@/data/travelerPhotos";
 
 export const metadata = {
   title: "Traveler Reviews",
@@ -49,10 +50,18 @@ export default function ReviewsPage() {
       </section>
 
       <section className="container-px py-10 sm:py-14 lg:py-20">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {reviews.map((review, i) => (
-            <Reveal key={i} delay={(i % 3) * 0.08}>
-              <ReviewCard review={review} className="h-full" />
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 lg:grid-cols-4">
+          {travelerPhotos.map((photo, i) => (
+            <Reveal key={i} delay={(i % 4) * 0.06}>
+              <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-sand shadow-soft ring-1 ring-ink/[0.06]">
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  sizes="(max-width:768px) 45vw, 300px"
+                  className="object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
             </Reveal>
           ))}
         </div>
