@@ -24,7 +24,7 @@ export default function Footer() {
             </span>
             <span>
               <span className="block text-sm text-ink/55">Don&apos;t wait any longer — contact us!</span>
-              <span className="block text-xl font-extrabold text-ink sm:text-2xl">{site.phoneIndia}</span>
+              <span className="block text-xl font-extrabold text-ink sm:text-2xl">{site.phoneVietnam}</span>
             </span>
           </a>
           <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
