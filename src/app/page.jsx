@@ -7,6 +7,7 @@ import Button from "@/components/Button";
 import Carousel from "@/components/Carousel";
 import PackageCard from "@/components/PackageCard";
 import DestinationCard from "@/components/DestinationCard";
+import VideoBanner from "@/components/VideoBanner";
 import TravelerPhotos from "@/components/TravelerPhotos";
 import CTASection from "@/components/CTASection";
 import { packages } from "@/data/packages";
@@ -79,6 +80,9 @@ export default function HomePage() {
           </Carousel>
         </div>
       </section>
+
+      {/* Cinematic video banner */}
+      <VideoBanner />
 
       {/* Watch & Read — light-grey */}
       <section className="bg-sand py-12 sm:py-16 lg:py-24">
