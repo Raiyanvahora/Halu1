@@ -13,7 +13,7 @@ export default function DestinationCard({ destination, className = "" }) {
         src={destination.image}
         alt={destination.name}
         fill
-        sizes="(max-width: 640px) 50vw, 260px"
+        sizes="(max-width: 768px) 85vw, 340px"
         className="object-cover transition-transform duration-[900ms] ease-smooth group-hover:scale-110"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent" />
